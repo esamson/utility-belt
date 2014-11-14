@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Launch gnome-terminal.
+# If it's already running, switch to that window.
+# If it's the current window, minimize it.
+# Bind to a keyboard shortcut (e.g., ctrl+`) for quick access a la Quake HUD.
+
+windows=`xdotool search --classname Gnome-terminal`
+
+if [[ -z "$windows" ]] ; then
+    gnome-terminal --full-screen --profile=hud
+    sleep 1
+    wmctrl -r terminal -b add,sticky
+    exit
+fi
+
+active=`xdotool getactivewindow`
+
+for window in $windows; do
+    if [ "$window" -eq "$active" ] ; then
+        xdotool windowminimize $window
+        exit
+    fi
+done
+
+xdotool windowactivate $window
