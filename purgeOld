@@ -8,5 +8,5 @@ echo "Purging old entries in $DIR" >> $LOG
 echo >> $LOG
 
 find $DIR -mindepth 1 -maxdepth 1 -ctime +7 >> $LOG
-(time find $DIR -mindepth 1 -maxdepth 1 -ctime +7 -exec rm -rf "{}" \;) >> $LOG 2>&1
+(time find $DIR -mindepth 1 -maxdepth 1 -ctime +7 -exec trash-put "{}" \;) >> $LOG 2>&1
 echo >> $LOG
