@@ -8,9 +8,9 @@
 windows=`xdotool search --classname Gnome-terminal`
 
 if [[ -z "$windows" ]] ; then
-    gnome-terminal --full-screen --profile=hud
+    gnome-terminal --full-screen --hide-menubar --profile=hud
     sleep 1
-    wmctrl -r terminal -b add,sticky
+    wmctrl -F -r 'Terminal HUD' -b add,sticky
     exit
 fi
 
