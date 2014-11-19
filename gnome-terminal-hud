@@ -5,7 +5,7 @@
 # If it's the current window, minimize it.
 # Bind to a keyboard shortcut (e.g., ctrl+`) for quick access a la Quake HUD.
 
-windows=`xdotool search --classname Gnome-terminal`
+windows=`xdotool search --name 'Terminal HUD'`
 
 if [[ -z "$windows" ]] ; then
     gnome-terminal --full-screen --hide-menubar --profile=hud
