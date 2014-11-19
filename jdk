@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [[ -z "$1" ]] ; then
+    echo "Usage: jdk <7 or 8>"
+    exit 1
+fi
+
+JDK_1="$HOME/.local/jdk$1"
+
+if [[ ! -f "$JDK_1/bin/javac" ]] ; then
+    echo "No JDK found in $JDK_1"
+    exit 2
+fi
+
+JDK="$HOME/.local/jdk"
+rm -f "$JDK"
+ln -s "$JDK_1" "$JDK"
