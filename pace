@@ -7,7 +7,18 @@
 
 tokenfile="$HOME/.pushbullet"
 if [ ! -e "$tokenfile" ] ; then
+    CLIENT_ID=fpYTsqYDG8GYQg1PkndrZ4JZPKV39egi
+    #REDIRECT_URI="https%3A%2F%2Fgithub.com%2Fesamson%2Futility-belt%2Fblob%2Fmaster%2Fpace?tokenfile=$tokenfile"
+    REDIRECT_URI="http%3A%2F%2Fapps.samson.ph%2Fpace%3Ftokenfile%3D$tokenfile"
+    OAUTH_URL="https://www.pushbullet.com/authorize?client_id=$CLIENT_ID&redirect_uri=$REDIRECT_URI&response_type=token&scope=everything"
+    echo
     echo "Pushbullet API token not found in $tokenfile"
+    echo
+    echo "Authorize pace at $OAUTH_URL"
+    echo
+    echo "The API token will be in the access_token fragment of the URI you are redirected to."
+    echo "Save that token in $tokenfile"
+    xdg-open "$OAUTH_URL"
     exit 1
 fi
 token="$(<$tokenfile)"
