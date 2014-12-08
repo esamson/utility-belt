@@ -1,0 +1,48 @@
+#!/bin/sh
+
+case "$1" in
+
+    'desk')
+        xrandr --output HDMI-0 --off \
+        && xrandr --output VGA-0 --mode 1920x1080 --rate 60 --primary \
+        && xrandr --output LVDS-0 --mode 1366x768 --rate 60 --pos 1920x580
+        ;;
+
+    'hp')
+        xrandr --output HDMI-0 --off \
+        && xrandr --output LVDS-0 --off \
+        && xrandr --output VGA-0 --mode 1920x1080 --rate 60 --primary
+        ;;
+
+    'lap')
+        xrandr --output HDMI-0 --off
+        xrandr --output VGA-0 --off
+        xrandr --output LVDS-0 --mode 1366x768 --rate 60 --pos 0x0 --primary
+        ;;
+
+    'lg')
+        xrandr --output LVDS-0 --off \
+        && xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --primary \
+        && xrandr --output VGA-0 --mode 1920x1080 --rate 60 --pos 1920x180
+        ;;
+
+    'acer')
+        xrandr --output LVDS-0 --off \
+        && xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --primary \
+        && xrandr --output VGA-0 --mode 1440x900 --rate 60 --pos -1440x180
+        ;;
+
+    'acer-reset')
+        xrandr --output LVDS-0 --off \
+        && xrandr --output HDMI-0 --mode 1920x1080 --rate 60 --primary \
+        && xrandr --output VGA-0 --mode 1024x768 --rate 60 --pos 1920x180
+        ;;
+
+    *)
+
+        echo "Usage: $0 { desk | lap | lg | acer | acer-reset}"
+        exit 1
+        ;;
+esac
+
+exit 0
