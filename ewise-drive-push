@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Push ~/Documents/eWise to Google Drive
+#
+# Depends on https://github.com/rakyll/drive
+# The `drive` command must be in your $PATH
+# You must already have done `drive init` on ~/Documents
+
+cd ~/Documents
+drive push -r=true eWise
+
