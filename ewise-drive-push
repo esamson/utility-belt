@@ -7,5 +7,5 @@
 # You must already have done `drive init` on ~/Documents
 
 cd ~/Documents
-drive push -r=true eWise
+drive push eWise
 
