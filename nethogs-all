@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Run nethogs on all enabled network devices.
+# See: http://nethogs.sourceforge.net/
+
+NETS="/sys/class/net/*"
+
+for net in $NETS; do
+    ifname=`basename $net`
+    ifstate=`cat $net/operstate`
+    if [ $ifstate == 'up' ]; then
+        devices="$devices $ifname"
+    fi
+done
+
+if [ -z $devices ]; then
+    echo "No enabled network devices found"
+    exit 2
+else
+    nethogs $devices
+fi
