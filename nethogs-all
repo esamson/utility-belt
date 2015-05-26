@@ -13,7 +13,8 @@ for net in $NETS; do
     fi
 done
 
-if [ -z $devices ]; then
+echo "devices: [$devices]"
+if [ -z "$devices" ]; then
     echo "No enabled network devices found"
     exit 2
 else
