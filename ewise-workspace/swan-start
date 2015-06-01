@@ -6,5 +6,6 @@ export DEVICE_KEYSTORE_FILE=$SWAN_SERVER/src/test/resources/device.keystore
 export DEVICE_KEYSTORE_PASSWORD=k7PTmSIeQnFnebPPVtOUY9xSUsowincSglx9inmz
 
 cd $SWAN_SERVER
+vagrant up
 java -jar target/swan-server-1.0.0-SNAPSHOT.jar server dev.yaml
 
