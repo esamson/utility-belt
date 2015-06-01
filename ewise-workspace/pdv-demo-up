@@ -34,6 +34,6 @@ cd $SEAGULL_DIR \
     && cp $SEAGULL_DIR/seagull-app-g/target/seagull-app-g-1.0.0-SNAPSHOT.jar $BUILD_DIR/seagull-app-g.jar \
 && \
 rsync -a $SCRIPTS_DIR $BUILD_DIR \
-&& rsync -av --delete $BUILD_DIR/ $DEMO_DIR \
+&& rsync -av $BUILD_DIR/ $DEMO_DIR \
 && rm -rf $BUILD_DIR
 
