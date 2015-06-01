@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SWAN=swan-server.jar
+export DEVICE_KEYSTORE_FILE=device.keystore
+export DEVICE_KEYSTORE_PASSWORD=k7PTmSIeQnFnebPPVtOUY9xSUsowincSglx9inmz
+
+java -jar $SWAN db drop-all \
+    --confirm-delete-everything dev.yaml && \
+java -jar $SWAN db migrate dev.yaml

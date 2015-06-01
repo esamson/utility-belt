@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SEAGULL=seagull-app-g.jar
+
+java -jar $SEAGULL
+

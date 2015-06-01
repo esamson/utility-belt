@@ -1,0 +1,7 @@
+#!/bin/bash
+
+SWAN_DIR=~/code/swan
+
+cd $SWAN_DIR
+mvn install
+

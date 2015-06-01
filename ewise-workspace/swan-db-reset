@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SWAN_DIR=~/code/swan
+SWAN_SERVER=$SWAN_DIR/swan-server
+export DEVICE_KEYSTORE_FILE=$SWAN_SERVER/src/test/resources/device.keystore
+export DEVICE_KEYSTORE_PASSWORD=k7PTmSIeQnFnebPPVtOUY9xSUsowincSglx9inmz
+
+cd $SWAN_SERVER
+java -jar target/swan-server-1.0.0-SNAPSHOT.jar db drop-all \
+    --confirm-delete-everything dev.yaml && \
+java -jar target/swan-server-1.0.0-SNAPSHOT.jar db migrate dev.yaml

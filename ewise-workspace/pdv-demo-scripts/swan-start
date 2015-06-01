@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SWAN=swan-server.jar
+export DEVICE_KEYSTORE_FILE=device.keystore
+export DEVICE_KEYSTORE_PASSWORD=k7PTmSIeQnFnebPPVtOUY9xSUsowincSglx9inmz
+
+java -jar $SWAN server dev.yaml
+
