@@ -31,8 +31,8 @@ cd $ELEPHANT_DIR \
 cd $SWAN_DIR \
     && mvn clean install \
     && cp $SWAN_DIR/Vagrantfile $BUILD_DIR \
-    && cp $SWAN_DIR/swan-server/dev.yaml $BUILD_DIR \
-    && cp $SWAN_DIR/swan-server/src/test/resources/device.keystore $BUILD_DIR/swan-dev.yaml \
+    && cp $SWAN_DIR/swan-server/dev.yaml $BUILD_DIR/swan-dev.yaml \
+    && cp $SWAN_DIR/swan-server/src/test/resources/device.keystore $BUILD_DIR \
     && cp $SWAN_DIR/swan-server/target/swan-server-1.0.0-SNAPSHOT.jar $BUILD_DIR/swan-server.jar \
 && \
 cd $SEAGULL_DIR \
