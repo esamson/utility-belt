@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ELEPHANT=elephant-server.jar
+
+java -jar $ELEPHANT server elephant-dev.yaml
+

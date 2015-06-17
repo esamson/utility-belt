@@ -19,14 +19,20 @@ BASEDIR=`cd "$PRGDIR" >/dev/null; pwd`
 SCRIPTS_DIR="$BASEDIR/pdv-demo-scripts/"
 BUILD_DIR=`mktemp -d`
 DEMO_DIR=$HOME/.local/share/Dropbox/PDV/demo/
+ELEPHANT_DIR=$HOME/code/elephant
 SWAN_DIR=$HOME/code/swan
 SEAGULL_DIR=$HOME/code/seagull
 
+cd $ELEPHANT_DIR \
+    && mvn clean install \
+    && cp $ELEPHANT_DIR/elephant-server/dev.yaml $BUILD_DIR/elephant-dev.yaml \
+    && cp $ELEPHANT_DIR/elephant-server/target/elephant-server-1.0.0-SNAPSHOT.jar $BUILD_DIR/elephant-server.jar \
+&& \
 cd $SWAN_DIR \
     && mvn clean install \
     && cp $SWAN_DIR/Vagrantfile $BUILD_DIR \
     && cp $SWAN_DIR/swan-server/dev.yaml $BUILD_DIR \
-    && cp $SWAN_DIR/swan-server/src/test/resources/device.keystore $BUILD_DIR \
+    && cp $SWAN_DIR/swan-server/src/test/resources/device.keystore $BUILD_DIR/swan-dev.yaml \
     && cp $SWAN_DIR/swan-server/target/swan-server-1.0.0-SNAPSHOT.jar $BUILD_DIR/swan-server.jar \
 && \
 cd $SEAGULL_DIR \
