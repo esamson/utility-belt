@@ -8,5 +8,5 @@ export SERVER_KEYSTORE_FILE=$SWAN_SERVER/src/test/resources/swan.keystore
 export SERVER_KEYSTORE_PASSWORD=`cat "$SERVER_KEYSTORE_FILE.password"`
 
 cd $SWAN_SERVER
-java -jar -Dtestmode target/swan-server-1.0.0-SNAPSHOT.jar server dev.yaml
+java -jar -Dtestmode target/swan-server-1.0.0-SNAPSHOT.jar server test.yaml
 
