@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PROJ_DIR=~/code/seagull
+DEBUG_JAR=$PROJ_DIR/seagull-app-g/target/seagull-app-g-1.0.0-SNAPSHOT.jar
+
+java -jar $DEBUG_JAR
+

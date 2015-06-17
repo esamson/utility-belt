@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ELEPHANT_DIR=~/code/elephant
+
+cd $ELEPHANT_DIR
+mvn clean install
+

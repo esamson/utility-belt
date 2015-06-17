@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ELEPHANT_DIR=~/code/elephant
+ELEPHANT_SERVER=$ELEPHANT_DIR/elephant-server
+
+cd $ELEPHANT_SERVER
+java -jar target/elephant-server-1.0.0-SNAPSHOT.jar server dev.yaml
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PROJ_DIR=~/code/seagull
+
+cd $PROJ_DIR
+mvn clean install
+
