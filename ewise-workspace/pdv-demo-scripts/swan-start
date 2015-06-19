@@ -3,6 +3,8 @@
 SWAN=swan-server.jar
 export DEVICE_KEYSTORE_FILE=device.keystore
 export DEVICE_KEYSTORE_PASSWORD=k7PTmSIeQnFnebPPVtOUY9xSUsowincSglx9inmz
+export SERVER_KEYSTORE_FILE=swan.keystore
+export SERVER_KEYSTORE_PASSWORD=ctdZ96ccFkvrLNPFvsBSgp4juzotrWlGbemSQNKt
 
 java -jar $SWAN server swan-dev.yaml
 
