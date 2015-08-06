@@ -6,6 +6,7 @@ export DEVICE_KEYSTORE_FILE=$SWAN_SERVER/src/test/resources/device.keystore
 export DEVICE_KEYSTORE_PASSWORD=`cat "$DEVICE_KEYSTORE_FILE.password"`
 export SERVER_KEYSTORE_FILE=$SWAN_SERVER/src/test/resources/swan.keystore
 export SERVER_KEYSTORE_PASSWORD=`cat "$SERVER_KEYSTORE_FILE.password"`
+export DEVICE_CLIENT_ORIGINS='"http://localhost:8383"'
 
 cd $SWAN_SERVER
 java -jar target/swan-server-1.0.0-SNAPSHOT.jar db drop-all \
