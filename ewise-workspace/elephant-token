@@ -1,0 +1,14 @@
+#/bin/bash
+
+if [[ -z "$1" ]] ; then
+    echo "Usage: elephant-token <userId>"
+    exit 1
+fi
+
+curl -s http://localhost:35374/sessionToken?user=$1 | xclip -selection clipboard
+
+xclip -selection clipboard -o
+
+echo
+echo "Elephant token copied to clipboard"
+
